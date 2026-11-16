@@ -231,15 +231,24 @@ export const Projects: React.FC = () => {
 
               <div className="pt-4 flex flex-wrap items-center gap-4">
                 <a
-                  href="#contact"
+                  href="https://github.com/jagadeesh-gopu/Credit-guider"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-sm font-medium bg-ink-900 text-white hover:bg-coral transition-all duration-300 shadow-md active:scale-95"
                 >
-                  <Download className="w-4 h-4" />
-                  <span>Request APK Package</span>
+                  <Github className="w-4 h-4" />
+                  <span>Inspect Source Code</span>
+                  <ExternalLink className="w-3.5 h-3.5 opacity-60" />
                 </a>
-                <span className="text-xs font-mono text-gray-500">
-                  Tested on Android 12+ devices
-                </span>
+
+                <a
+                  href="/ai-credit-guide.apk"
+                  download="AI-Credit-Guide.apk"
+                  className="inline-flex items-center gap-2 px-5 py-3 rounded-full text-sm font-medium bg-white text-ink-800 border border-gray-200/90 hover:border-ink-700 hover:text-ink-900 transition-all duration-300 shadow-sm active:scale-95"
+                >
+                  <Download className="w-4 h-4 text-emerald-600" />
+                  <span>Download APK (Direct)</span>
+                </a>
               </div>
             </div>
 
