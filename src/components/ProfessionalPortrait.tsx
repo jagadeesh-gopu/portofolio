@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Sparkles, Code2, Award, ArrowUpRight } from 'lucide-react';
+import portraitImg from '../assets/jagadeesh-portrait.jpg';
 
 export const ProfessionalPortrait: React.FC = () => {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -98,10 +99,10 @@ export const ProfessionalPortrait: React.FC = () => {
           {!imgError ? (
             <div className="relative w-full h-full overflow-hidden">
               <img
-                src="/jagadeesh-portrait.jpg"
+                src={portraitImg}
                 alt="Jagadeesh Gopu"
                 onError={() => setImgError(true)}
-                className="h-full w-full object-cover object-[center_18%] transition-transform duration-700 ease-out group-hover:scale-[1.03] filter brightness-[1.02] contrast-[1.04]"
+                className="h-full w-full object-cover object-[center_12%] transition-transform duration-700 ease-out group-hover:scale-[1.03] filter brightness-[1.02] contrast-[1.04]"
               />
 
               {/* Bottom Subtle Gradient Fade for Clean Readability */}
