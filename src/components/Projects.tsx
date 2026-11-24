@@ -9,7 +9,10 @@ import {
   Smartphone, 
   Zap, 
   BarChart3,
-  Layers
+  Layers,
+  HeartPulse,
+  ShieldAlert,
+  Bot
 } from 'lucide-react';
 
 export const Projects: React.FC = () => {
@@ -19,6 +22,9 @@ export const Projects: React.FC = () => {
 
   // Interactive State for AI Credit Comparator
   const [selectedProvider, setSelectedProvider] = useState<'gemini' | 'openai' | 'anthropic' | 'deepseek'>('gemini');
+
+  // Interactive State for PawCare Platform Widget
+  const [pawcareTab, setPawcareTab] = useState<'buddy' | 'services' | 'admin'>('buddy');
 
   const sampleNotes = [
     { title: "Project Deliverables", detail: "Review Q1 frontend deployment & API latency targets" },
@@ -309,6 +315,190 @@ export const Projects: React.FC = () => {
 
                 <p className="text-[11px] text-gray-400 font-mono mt-3 text-center">
                   Live data model from the AI Credit Guide Android app.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Project 3: PawCare — AI-Powered Veterinary Platform */}
+        <div className="rounded-3xl bg-gradient-to-br from-[#042f2e] via-[#091e24] to-[#022c22] text-white p-8 sm:p-12 shadow-2xl border border-teal-500/30 relative overflow-hidden">
+          {/* Subtle Mint Glow Accent */}
+          <div className="absolute top-0 right-0 w-96 h-96 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center relative z-10">
+            
+            {/* Left Column: Architecture & Narrative */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="flex items-center gap-2">
+                <span className="px-3 py-1 rounded-full text-xs font-mono font-medium bg-teal-400/20 text-teal-300 border border-teal-400/40">
+                  03 &bull; AI CLINICAL CONCIERGE &bull; HYDERABAD
+                </span>
+                <span className="text-xs font-mono text-emerald-400 flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                  LIVE ON VERCEL
+                </span>
+              </div>
+
+              <div>
+                <p className="text-xs font-mono uppercase tracking-widest text-teal-400">Veterinary Care &amp; Booking Prototype</p>
+                <h3 className="font-serif text-3xl sm:text-4xl text-white mt-1">
+                  PawCare <span className="italic text-teal-300 font-normal">&mdash; Happy Tails Clinic</span>
+                </h3>
+              </div>
+
+              <p className="text-gray-200 text-base sm:text-lg leading-relaxed font-normal">
+                Engineered an enterprise-grade veterinary platform and appointment concierge for Happy Tails Veterinary Clinic in Jubilee Hills, Hyderabad. Integrates <strong>Buddy AI</strong>—a specialized clinical concierge equipped with WSAVA protocol intake, real-time emergency triage detection, transparent service pricing, and a protected administrative KPI dashboard with automated WhatsApp follow-ups.
+              </p>
+
+              <div className="flex flex-wrap gap-2 text-xs font-mono">
+                <span className="px-3 py-1 rounded-full bg-white/10 text-teal-200 border border-white/10">React 18</span>
+                <span className="px-3 py-1 rounded-full bg-white/10 text-teal-200 border border-white/10">TypeScript</span>
+                <span className="px-3 py-1 rounded-full bg-white/10 text-teal-200 border border-white/10">Tailwind CSS</span>
+                <span className="px-3 py-1 rounded-full bg-white/10 text-teal-200 border border-white/10">Buddy AI Concierge</span>
+                <span className="px-3 py-1 rounded-full bg-white/10 text-teal-200 border border-white/10">WSAVA Triage Guardrails</span>
+                <span className="px-3 py-1 rounded-full bg-white/10 text-teal-200 border border-white/10">Admin Portal</span>
+              </div>
+
+              <div className="pt-4 flex flex-wrap items-center gap-4">
+                <a
+                  href="https://pawcare-beta.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-semibold bg-teal-400 text-ink-900 hover:bg-teal-300 transition-all duration-300 shadow-lg hover:shadow-teal-400/25 active:scale-95"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  <span>Launch Live App (Vercel)</span>
+                </a>
+
+                <a
+                  href="https://github.com/jagadeesh-gopu/Pawcare"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-medium bg-white/10 text-white hover:bg-white/20 transition-all duration-300 border border-white/20 shadow-sm active:scale-95"
+                >
+                  <Github className="w-4 h-4" />
+                  <span>Inspect Source Code</span>
+                </a>
+              </div>
+            </div>
+
+            {/* Right Column: Interactive Clinic Simulator Widget */}
+            <div className="lg:col-span-5">
+              <div className="rounded-2xl bg-ink-950/90 text-white p-6 shadow-2xl border border-teal-500/30 backdrop-blur-md">
+                
+                {/* Header with Switcher Tabs */}
+                <div className="flex items-center justify-between pb-3 border-b border-white/10 mb-4">
+                  <div className="flex items-center gap-2">
+                    <HeartPulse className="w-4 h-4 text-teal-400" />
+                    <span className="text-xs font-mono font-bold uppercase tracking-wider text-white">PawCare Clinic Engine</span>
+                  </div>
+                  <span className="text-[10px] font-mono text-teal-300 bg-teal-950/80 px-2 py-0.5 rounded border border-teal-700">
+                    JUBILEE HILLS
+                  </span>
+                </div>
+
+                {/* Sub-Widget Tabs */}
+                <div className="grid grid-cols-3 gap-1.5 mb-4 p-1 bg-ink-900 rounded-lg text-xs font-mono">
+                  <button
+                    onClick={() => setPawcareTab('buddy')}
+                    className={`py-1.5 rounded-md transition-all ${
+                      pawcareTab === 'buddy' ? 'bg-teal-500 text-ink-900 font-bold shadow' : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    Buddy AI
+                  </button>
+                  <button
+                    onClick={() => setPawcareTab('services')}
+                    className={`py-1.5 rounded-md transition-all ${
+                      pawcareTab === 'services' ? 'bg-teal-500 text-ink-900 font-bold shadow' : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    Services
+                  </button>
+                  <button
+                    onClick={() => setPawcareTab('admin')}
+                    className={`py-1.5 rounded-md transition-all ${
+                      pawcareTab === 'admin' ? 'bg-teal-500 text-ink-900 font-bold shadow' : 'text-gray-400 hover:text-white'
+                    }`}
+                  >
+                    Admin Portal
+                  </button>
+                </div>
+
+                {/* Tab 1: Buddy AI Chat Intake Simulation */}
+                {pawcareTab === 'buddy' && (
+                  <div className="space-y-3 bg-white/5 p-4 rounded-xl border border-white/10 text-xs">
+                    <div className="flex items-center gap-2 text-teal-300 font-mono text-[11px] pb-1 border-b border-white/5">
+                      <Bot className="w-3.5 h-3.5" />
+                      <span>Buddy &bull; Virtual Concierge Active</span>
+                    </div>
+
+                    <div className="space-y-2">
+                      <div className="p-2.5 rounded-lg bg-teal-950/60 border border-teal-800/40 text-teal-100">
+                        <p className="font-medium text-[11px]">🐾 Intake Guardrails Initialized:</p>
+                        <p className="text-[10px] text-teal-200/80 mt-1">Collecting Pet Type &bull; Symptoms &bull; WSAVA Protocols &bull; WhatsApp Booking.</p>
+                      </div>
+
+                      <div className="p-2.5 rounded-lg bg-red-950/40 border border-red-500/30 text-red-200">
+                        <div className="flex items-center gap-1.5 font-semibold text-[11px] text-red-300">
+                          <ShieldAlert className="w-3.5 h-3.5 text-red-400" />
+                          <span>Emergency Triage Scanner</span>
+                        </div>
+                        <p className="text-[10px] text-gray-300 mt-1">
+                          Auto-detects acute distress &rarr; triggers 24/7 hotline (+91 40 2355 9800) alert card.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Tab 2: Clinical Services & Pricing */}
+                {pawcareTab === 'services' && (
+                  <div className="space-y-2 bg-white/5 p-4 rounded-xl border border-white/10 text-xs font-mono">
+                    <div className="flex justify-between items-center pb-1.5 border-b border-white/5">
+                      <span className="text-gray-300">General Consultation</span>
+                      <span className="text-teal-300 font-bold">₹500</span>
+                    </div>
+                    <div className="flex justify-between items-center pb-1.5 border-b border-white/5">
+                      <span className="text-gray-300">Vaccination Assessment</span>
+                      <span className="text-teal-300 font-bold">₹400</span>
+                    </div>
+                    <div className="flex justify-between items-center pb-1.5 border-b border-white/5">
+                      <span className="text-gray-300">Dental Health Check</span>
+                      <span className="text-teal-300 font-bold">₹600</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-gray-300">Full Pet Spa &amp; Grooming</span>
+                      <span className="text-teal-300 font-bold">₹999</span>
+                    </div>
+                  </div>
+                )}
+
+                {/* Tab 3: Admin Portal KPIs */}
+                {pawcareTab === 'admin' && (
+                  <div className="space-y-3 bg-white/5 p-4 rounded-xl border border-white/10 text-xs font-mono">
+                    <div className="grid grid-cols-2 gap-2 text-center">
+                      <div className="p-2.5 rounded-lg bg-ink-900 border border-white/10">
+                        <div className="text-[10px] text-gray-400">TOTAL REQUESTS</div>
+                        <div className="text-base font-bold text-white mt-0.5">24 Enquiries</div>
+                      </div>
+                      <div className="p-2.5 rounded-lg bg-teal-950/60 border border-teal-500/40">
+                        <div className="text-[10px] text-teal-300">PENDING ACTIONS</div>
+                        <div className="text-base font-bold text-teal-300 mt-0.5">4 Follow-ups</div>
+                      </div>
+                    </div>
+
+                    <div className="p-2 rounded-lg bg-emerald-950/40 border border-emerald-500/30 flex items-center justify-between text-[11px]">
+                      <span className="text-emerald-200">WhatsApp 1-Click Sync</span>
+                      <span className="text-emerald-400 font-semibold">&check; Active</span>
+                    </div>
+                  </div>
+                )}
+
+                <p className="text-[11px] text-gray-400 font-mono mt-3 text-center">
+                  Live full-stack architecture demo deployed on Vercel.
                 </p>
               </div>
             </div>
